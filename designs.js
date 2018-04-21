@@ -23,7 +23,7 @@ function makeGrid(gridHeight,gridWidth) {
 //runs the getDimensions function when the submit button is clicked.
 document.getElementById("sizePicker").addEventListener("submit", getDimensions);
 //function gets the dimensions that were inputted by the user and puts them into the makeGrid function
-function getDimensions() {
+function getDimensions(event) {
     event.preventDefault();
     const gridHeight = document.getElementById("inputHeight").value;
    	const gridWidth = document.getElementById("inputWidth").value;
