@@ -17,7 +17,7 @@ function makeGrid(gridHeight,gridWidth) {
       //creates a cell in the row
       cellInsert = ('cell_'+ x);
       cell = $(this).append('<td class = '+ cellInsert + ' >');
-      $('td').css('background', '#0000');
+      $('td').css('background-color', '#0000');
     }
   });
   colorChange();
@@ -50,7 +50,7 @@ $('#colorPicker').on("input",function(evt){
 function colorChange(){
   $('td').each(function (){
     $(this).on("click",function(){
-      $(this).css('background', selectedColor);
+      $(this).css('background-color', selectedColor);
       console.log("this cell has been clicked and is now" + selectedColor)
     });
   });
