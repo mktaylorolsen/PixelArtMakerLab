@@ -1,4 +1,5 @@
-var grid, row, cell;
+//BUILDING GRID
+var grid, row, cell, rowInsert, cellInsert;
 
 //makes a grid from the given dimensions
 grid = $('#pixelCanvas');
@@ -7,16 +8,20 @@ function makeGrid(gridHeight,gridWidth) {
   //iterates over the height
   for(i = 0; i < gridHeight; i++){
     //creates a row in the grid
-    row = grid.append('<tr></tr>');
+    rowInsert = ('row_'+i);
+    row = grid.append('<tr class = '+ rowInsert + ' >');
+ 	  //iterates over the width
   }
- 	//iterates over the width
-  for(x = 0; x < gridWidth; x++){
-    //creates a cell in the row
-    cell = row.append('<td></td>');
-  }
-  changeColor();
+  $('tr').each(function (){
+    for(x = 0; x < gridWidth; x++){
+      //creates a cell in the row
+      cellInsert = ('cell_'+ x);
+      cell = $(this).append('<td class = '+ cellInsert + ' >');
+      $('td').css('background', '#0000');
+    }
+  });
+  colorChange();
 }
-
 
 //runs the getDimensions function when the submit button is clicked.
 var sizePicker = $('#sizePicker');
@@ -30,20 +35,23 @@ function getDimensions(e) {
 }
 
 
-//add click events to all cells
-function changeColor() {
-  var cells = $('td');
-  cells.each(function(){
-    $(this).click(function(e) {
-        $(e.target).css('background', newColor);
-      });
+//GETS COLOR
+//set a value for the selected color
+var selectedColor = $('#colorPicker').val();
+console.log(selectedColor);
+//create a function for changing the value of the colorPicker
+$('#colorPicker').on("input",function(evt){
+  evt.preventDefault();
+  selectedColor = $(evt.target).val()
+  console.log(selectedColor);
+});
+
+//add a click event to all cells
+function colorChange(){
+  $('td').each(function (){
+    $(this).on("click",function(){
+      $(this).css('background', selectedColor);
+      console.log("this cell has been clicked and is now" + selectedColor)
     });
-  }
-
-
-//selects the new color
-var colorBox = $('#colorPicker');
-var newColor = colorBox.val();
-colorBox.on("input", function() {
-  newColor = colorBox.val();
-  }, false);
+  });
+}
