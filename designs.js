@@ -29,6 +29,8 @@ sizePicker.submit(getDimensions);
 //function gets the dimensions that were inputted by the user and puts them into the makeGrid function
 function getDimensions(e) {
     e.preventDefault();
+    //clears the grid
+    $('table').empty()
     var gridHeight = $("#inputHeight").val();
    	var gridWidth = $("#inputWidth").val();
 	  makeGrid(gridHeight,gridWidth);
