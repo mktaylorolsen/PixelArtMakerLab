@@ -1,28 +1,19 @@
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  background-color: white;
-}
-
-div{
-    background-color: #686868;
-    text-align: center;
-    border-radius: 50px;
-    max-width:800px;
-    margin: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #c3f6f7;
+  color:#6dc5c6;
 }
 
 h1 {
-  font-family: 'Cabin Sketch', cursive;
-  font-size: 70px;
-  color: #ff9999;
+  font-size: 80px;
+  color: white;
   margin: 0.2em;
 }
 
 h2 {
   margin: 1em 0 0.25em;
-  font-family: 'Cabin Sketch', cursive;
-  color: #ffcc99;
+  color: #6dc5c6;
 }
 
 h2:first-of-type {
@@ -41,13 +32,13 @@ table {
 }
 
 tr {
-  height: 20px;
+  height: 40px;
 }
 
 td {
-  width: 20px;
+  width: 40px;
 }
 
 input[type="number"] {
-  width: 6em;
+  width: 2.5em;
 }
