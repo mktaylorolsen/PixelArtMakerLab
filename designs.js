@@ -1,3 +1,4 @@
+
 //BUILDING GRID
 var grid, row, cell, rowInsert, cellInsert;
 
